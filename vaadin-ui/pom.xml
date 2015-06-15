@@ -23,7 +23,7 @@
           </dependency>
           <dependency>
                <groupId>org.vaadin</groupId>
-               <artifactId>sap-hana-vaadin-example-backend</artifactId>
+               <artifactId>hana-backend</artifactId>
                <version>${project.version}</version>
           </dependency>
           <dependency>

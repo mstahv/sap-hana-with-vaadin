@@ -4,8 +4,8 @@ import javax.ejb.EJB;
 import javax.servlet.annotation.WebServlet;
 
 import org.apache.commons.lang3.StringUtils;
+import org.vaadin.saphana.backend.PersistenceFacade;
 import org.vaadin.saphana.backend.Person;
-import org.vaadin.saphana.backend.PersonFacade;
 import org.vaadin.viritin.fields.MTable;
 import org.vaadin.viritin.fields.MTextField;
 import org.vaadin.viritin.fields.MValueChangeEvent;
@@ -145,9 +145,9 @@ public class HanaUI extends UI {
 	public static class HanaUIServlet extends VaadinServlet {
 
 		@EJB
-		private PersonFacade personBean;
+		private PersistenceFacade personBean;
 
-		public PersonFacade getPersonBean() {
+		public PersistenceFacade getPersistenceFacade() {
 			return personBean;
 		}
 
@@ -159,8 +159,8 @@ public class HanaUI extends UI {
 	 * 
 	 * @return
 	 */
-	public static PersonFacade getPersonBean() {
-		return ((HanaUIServlet) VaadinServlet.getCurrent()).getPersonBean();
+	public static PersistenceFacade getPersonBean() {
+		return ((HanaUIServlet) VaadinServlet.getCurrent()).getPersistenceFacade();
 	}
 
 }

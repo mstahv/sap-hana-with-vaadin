@@ -2,7 +2,6 @@ package org.vaadin.saphana.backend;
 
 import java.util.Date;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -14,7 +13,9 @@ import javax.persistence.TemporalType;
 @Table(name = "T_PERSONS")
 public class Person extends AbstractEntity {
 
+    @Column(columnDefinition="NVARCHAR(100)")
 	private String firstName;
+    @Column(columnDefinition="NVARCHAR(100)")
 	private String lastName;
 
 	@Temporal(TemporalType.DATE)
